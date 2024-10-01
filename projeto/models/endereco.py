@@ -19,6 +19,7 @@ class Endereco:
     
     def _verificar_numero(self, valor):
         self._verificar_numero_vazio(valor)
+        self._verificar_numero_negativo(valor)
         self._verificar_numero_tipo_invalido(valor)
 
         self.numero = valor
@@ -58,6 +59,10 @@ class Endereco:
         if valor is None:
             raise TypeError("O número não pode ficar vazio!")
         
+    def _verificar_numero_negativo(self, valor):
+        if valor < 0:
+            raise TypeError("O número não pode ser composto por números negativos!")
+        
     def _verificar_numero_tipo_invalido(self, valor):
         if not isinstance(valor, int):
             raise TypeError("O número deve ser um texto!")
@@ -80,7 +85,7 @@ class Endereco:
         
     def _verificar_cidade_vazio(self, valor):
         if not valor.strip():
-            raise TypeError("O cidade não pode ficar vazio!")
+            raise TypeError("A cidade não pode ficar vazio!")
 
     def _verificar_cidade_tipo_invalido(self, valor):
         if not isinstance(valor, str):

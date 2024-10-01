@@ -1,5 +1,5 @@
 from abc import ABC
-from projeto.models.endereco import Endereco
+from models.endereco import Endereco
 
 class Pessoa(ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
@@ -12,6 +12,7 @@ class Pessoa(ABC):
 
     def _verificar_id(self, valor):
         self._verificar_id_vazio(valor)
+        self._verificar_id_negativo(valor)
         self._verificar_id_tipo_invalido(valor)
 
         self.id = valor
@@ -42,6 +43,10 @@ class Pessoa(ABC):
     def _verificar_id_vazio(self, valor):
         if valor is None:
             raise TypeError("O ID não pode ficar vazio!")
+        
+    def _verificar_id_negativo(self, valor):
+        if valor < 0:
+            raise TypeError("O ID não pode ser composto por números negativos!")
         
     def _verificar_id_tipo_invalido(self, valor):
         if not isinstance(valor, int):

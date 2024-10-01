@@ -1,7 +1,7 @@
 import pytest
-from projeto.models.pessoa import Pessoa
-from projeto.models.endereco import Endereco
-from projeto.models.enums.unidade_federativa import UnidadeFederativa
+from models.pessoa import Pessoa
+from models.endereco import Endereco
+from models.enums.unidade_federativa import UnidadeFederativa
 
 @pytest.fixture
 def pessoa_valida():
@@ -27,6 +27,10 @@ def test_pessoa_id_tipo_invalido():
 def test_pessoa_id_vazio():
     with pytest.raises(TypeError, match = "O ID não pode ficar vazio!"):
         Pessoa(None, "Rafael", "71988...", "Rafael@...", Endereco("Rua A", 444, "Qd 10 Lt 7", "41.....", "Salvador", UnidadeFederativa.BAHIA) )
+
+def test_pessoa_id_vazio():
+    with pytest.raises(TypeError, match = "O ID não pode ficar vazio!"):
+        Pessoa(-222, "Rafael", "71988...", "Rafael@...", Endereco("Rua A", 444, "Qd 10 Lt 7", "41.....", "Salvador", UnidadeFederativa.BAHIA) )
 
 def test_nome_tipo_invalido():
     with pytest.raises(TypeError, match = "O nome deve ser um texto!"):

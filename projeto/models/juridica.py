@@ -1,6 +1,6 @@
 from abc import ABC
-from models.pessoa import Pessoa
-from models.endereco import Endereco
+from projeto.models.pessoa import Pessoa
+from projeto.models.endereco import Endereco
 
 class Juridica(Pessoa, ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, cnpj: str, inscricaoEstadual: str, endereco: Endereco) -> None:
@@ -10,15 +10,15 @@ class Juridica(Pessoa, ABC):
 
 
     def _verificar_cnpj(self, valor):
-        self._verificar_cnpj_vazio(valor)
         self._verificar_cnpj_tipo_invalido(valor)
+        self._verificar_cnpj_vazio(valor)
 
         self.cnpj = valor
         return self.cnpj
 
     def _verificar_inscricao_estadual(self, valor):
-        self._verificar_inscricao_estadual_vazio(valor)
         self._verificar_inscricao_estadual_tipo_invalido(valor)
+        self._verificar_inscricao_estadual_vazio(valor)
 
         self.inscricaoEstadual = valor
         return self.inscricaoEstadual

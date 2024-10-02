@@ -1,15 +1,15 @@
 import os 
-from models.medico import Medico
-from models.advogado import Advogado
-from models.engenheiro import Engenheiro
-from models.cliente import Cliente
-from models.fornecedor import Fornecedor
-from models.prestacao_servico import PrestacaoServico
-from models.endereco import Endereco
-from models.enums.sexo import Sexo
-from models.enums.estado_civil import EstadoCivil
-from models.enums.setor import Setor
-from models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.medico import Medico
+from projeto.models.advogado import Advogado
+from projeto.models.engenheiro import Engenheiro
+from projeto.models.cliente import Cliente
+from projeto.models.fornecedor import Fornecedor
+from projeto.models.prestacao_servico import PrestacaoServico
+from projeto.models.endereco import Endereco
+from projeto.models.enums.sexo import Sexo
+from projeto.models.enums.estado_civil import EstadoCivil
+from projeto.models.enums.setor import Setor
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
 
 os.system("cls || clear")
 

@@ -1,7 +1,7 @@
 import pytest
-from models.fornecedor import Fornecedor
-from models.endereco import Endereco
-from models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.fornecedor import Fornecedor
+from projeto.models.endereco import Endereco
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
 
 @pytest.fixture
 def fornecedor_valido():

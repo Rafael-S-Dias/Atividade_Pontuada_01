@@ -1,8 +1,8 @@
 from abc import ABC
-from models.pessoa import Pessoa
-from models.enums.sexo import Sexo
-from models.endereco import Endereco
-from models.enums.estado_civil import EstadoCivil
+from projeto.models.pessoa import Pessoa
+from projeto.models.enums.sexo import Sexo
+from projeto.models.endereco import Endereco
+from projeto.models.enums.estado_civil import EstadoCivil
 
 class Fisica(Pessoa, ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, endereco: Endereco) -> None:

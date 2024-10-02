@@ -1,6 +1,6 @@
 import pytest
-from models.endereco import Endereco
-from models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.endereco import Endereco
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
 
 @pytest.fixture
 def endereco_valido():
@@ -8,7 +8,7 @@ def endereco_valido():
     return endereco1
 
 def test_logradouro_valido(endereco_valido):
-    assert endereco_valido.numero == "Rua A"
+    assert endereco_valido.logradouro == "Rua A"
 
 def test_numero_valido(endereco_valido):
     assert endereco_valido.numero == 444
@@ -23,7 +23,7 @@ def test_cidade_valida(endereco_valido):
     assert endereco_valido.cidade == "Salvador"
 
 def test_uf_valida(endereco_valido):
-    assert endereco_valido.uf == UnidadeFederativa.BAHIA.nome
+    assert endereco_valido.uf == UnidadeFederativa.BAHIA
 
 def test_logradouro_vazio():
     with pytest.raises(TypeError, match = "O logradouro não pode ficar vazio!"):
@@ -51,7 +51,7 @@ def test_complemento_vazio():
 
 def test_complemento_tipo_invalido():
     with pytest.raises(TypeError, match = "O complemento deve ser um texto!"):
-        Endereco("Rua A", 444, "Qd 10 Lt 7", "41.....", "Salvador", UnidadeFederativa.BAHIA)
+        Endereco("Rua A", 444, 1, "41.....", "Salvador", UnidadeFederativa.BAHIA)
 
 def test_cep_vazio():
     with pytest.raises(TypeError, match = "O CEP não pode ficar vazio!"):

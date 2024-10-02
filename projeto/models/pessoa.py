@@ -1,5 +1,5 @@
 from abc import ABC
-from models.endereco import Endereco
+from projeto.models.endereco import Endereco
 
 class Pessoa(ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
@@ -12,29 +12,30 @@ class Pessoa(ABC):
 
     def _verificar_id(self, valor):
         self._verificar_id_vazio(valor)
-        self._verificar_id_negativo(valor)
+        
         self._verificar_id_tipo_invalido(valor)
+        self._verificar_id_negativo(valor)
 
         self.id = valor
         return self.id
 
     def _verificar_nome(self, valor):
-        self._verificar_nome_vazio(valor)
         self._verificar_nome_tipo_invalido(valor)
+        self._verificar_nome_vazio(valor)
 
         self.nome = valor
         return self.nome
     
     def _verificar_telefone(self, valor):
-        self._verificar_telefone_vazio(valor)
         self._verificar_telefone_tipo_invalido(valor)
+        self._verificar_telefone_vazio(valor)
 
         self.telefone = valor
         return self.telefone
 
     def _verificar_email(self, valor):
-        self._verificar_email_vazio(valor)
         self._verificar_email_tipo_invalido(valor)
+        self._verificar_email_vazio(valor)
 
         self.email = valor
         return self.email

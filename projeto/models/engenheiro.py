@@ -1,8 +1,8 @@
-from models.endereco import Endereco
-from models.enums.sexo import Sexo
-from models.enums.setor import Setor
-from models.funcionario import Funcionario
-from models.enums.estado_civil import EstadoCivil
+from projeto.models.endereco import Endereco
+from projeto.models.enums.sexo import Sexo
+from projeto.models.enums.setor import Setor
+from projeto.models.funcionario import Funcionario
+from projeto.models.enums.estado_civil import EstadoCivil
 
 class Engenheiro(Funcionario):
     def __init__(self, id: int, nome: str, telefone: str, email: str, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, cpf: str, rg: str, matricula: str, setor: Setor, salario: float, crea: str, endereco: Endereco) -> None:
@@ -10,8 +10,8 @@ class Engenheiro(Funcionario):
         self.crea = self._verificar_crea(crea)
 
     def _verificar_crea(self,valor):
-        self._verificar_crea_vazio(valor)
         self._verificar_crea_tipo_invalido(valor)
+        self._verificar_crea_vazio(valor)
 
         self.crea = valor
         return self.crea

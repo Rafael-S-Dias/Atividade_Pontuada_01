@@ -1,7 +1,7 @@
-from models.fisica import Fisica
-from models.enums.sexo import Sexo
-from models.endereco import Endereco
-from models.enums.estado_civil import EstadoCivil
+from projeto.models.fisica import Fisica
+from projeto.models.enums.sexo import Sexo
+from projeto.models.endereco import Endereco
+from projeto.models.enums.estado_civil import EstadoCivil
 
 class Cliente(Fisica):
     def __init__(self, id: int, nome: str, telefone: str, email: str, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, protocoloAtendimento: int, endereco: Endereco) -> None:

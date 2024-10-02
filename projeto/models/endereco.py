@@ -1,4 +1,4 @@
-from models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
 
 class Endereco:
     def __init__(self, logradouro: str, numero: int, complemento: str, cep: str, cidade: str, uf : UnidadeFederativa) -> None:
@@ -11,37 +11,38 @@ class Endereco:
 
 
     def _verificar_logradouro(self, valor):
-        self._verificar_logradouro_vazio(valor)
         self._verificar_logradouro_tipo_invalido(valor)
+        self._verificar_logradouro_vazio(valor)
 
         self.logradouro = valor
         return self.logradouro
     
     def _verificar_numero(self, valor):
         self._verificar_numero_vazio(valor)
-        self._verificar_numero_negativo(valor)
+        
         self._verificar_numero_tipo_invalido(valor)
+        self._verificar_numero_negativo(valor)
 
         self.numero = valor
         return self.numero
     
     def _verificar_complemento(self, valor):
-        self._verificar_complemento_vazio(valor)
         self._verificar_complemento_tipo_invalido(valor)
+        self._verificar_complemento_vazio(valor)
 
         self.complemento = valor
         return self.complemento
     
     def _verificar_cep(self, valor):
-        self._verificar_cep_vazio(valor)
         self._verificar_cep_tipo_invalido(valor)
+        self._verificar_cep_vazio(valor)
 
         self.cep = valor
         return self.cep
     
     def _verificar_cidade(self, valor):
-        self._verificar_cidade_vazio(valor)
         self._verificar_cidade_tipo_invalido(valor)
+        self._verificar_cidade_vazio(valor)
 
         self.cidade = valor
         return self.cidade

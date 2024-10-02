@@ -1,9 +1,9 @@
 import pytest
-from models.fisica import Fisica
-from models.endereco import Endereco
-from models.enums.unidade_federativa import UnidadeFederativa
-from models.enums.sexo import Sexo
-from models.enums.estado_civil import EstadoCivil
+from projeto.models.fisica import Fisica
+from projeto.models.endereco import Endereco
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.enums.sexo import Sexo
+from projeto.models.enums.estado_civil import EstadoCivil
 
 @pytest.fixture
 def fisica_valida():

@@ -1,10 +1,10 @@
 import pytest
-from models.funcionario import Funcionario
-from models.enums.estado_civil import EstadoCivil
-from models.enums.sexo import Sexo
-from models.endereco import Endereco
-from models.enums.unidade_federativa import UnidadeFederativa
-from models.enums.setor import Setor
+from projeto.models.funcionario import Funcionario
+from projeto.models.enums.estado_civil import EstadoCivil
+from projeto.models.enums.sexo import Sexo
+from projeto.models.endereco import Endereco
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.enums.setor import Setor
 
 @pytest.fixture
 def funcionario_valido():
@@ -56,7 +56,7 @@ def test_salario_vazio():
         Funcionario(222, "Rafael", "71988...", "Rafael@...", Sexo.MASCULINO, EstadoCivil.SOLTEIRO, "02/08/2001", "88888", "5555", "4444", Setor.JURIDICO, None, Endereco("Rua A", 444, "Qd 10 Lt 7", "41.....", "Salvador", UnidadeFederativa.BAHIA) )
 
 def test_salario_tipo_invalido():
-    with pytest.raises(ValueError, match = "O salário deve ser composto por números!"):
+    with pytest.raises(TypeError, match = "O salário deve ser composto por números!"):
         Funcionario(222, "Rafael", "71988...", "Rafael@...", Sexo.MASCULINO, EstadoCivil.SOLTEIRO, "02/08/2001", "88888", "5555", "4444", Setor.JURIDICO, "2500", Endereco("Rua A", 444, "Qd 10 Lt 7", "41.....", "Salvador", UnidadeFederativa.BAHIA) )
 
 def test_salario_negativo():

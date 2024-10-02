@@ -1,9 +1,9 @@
 from abc import ABC
-from models.fisica import Fisica
-from models.enums.sexo import Sexo
-from models.endereco import Endereco
-from models.enums.estado_civil import EstadoCivil
-from models.enums.setor import Setor
+from projeto.models.fisica import Fisica
+from projeto.models.enums.sexo import Sexo
+from projeto.models.endereco import Endereco
+from projeto.models.enums.estado_civil import EstadoCivil
+from projeto.models.enums.setor import Setor
 
 class Funcionario(Fisica, ABC):
     def __init__(self, id: int, nome: str, telefone: str, email: str, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, cpf: str, rg: str, matricula: str, setor: Setor, salario: float, endereco: Endereco) -> None:
@@ -16,28 +16,29 @@ class Funcionario(Fisica, ABC):
 
 
     def _verificar_cpf(self, valor):
-        self._verificar_cpf_vazio(valor)
         self._verificar_cpf_tipo_invalido(valor)
+        self._verificar_cpf_vazio(valor)
 
         self.cpf = valor
         return self.cpf
     
     def _verificar_rg(self, valor):
-        self._verificar_rg_vazio(valor)
         self._verificar_rg_tipo_invalido(valor)
+        self._verificar_rg_vazio(valor)
 
         self.rg = valor
         return self.rg
     
     def _verificar_matricula(self, valor):
-        self._verificar_matricula_vazio(valor)
         self._verificar_matricula_tipo_invalido(valor)
+        self._verificar_matricula_vazio(valor)
 
         self.matricula = valor
         return self.matricula
     
     def _verificar_salario(self, valor):
         self._verificar_salario_vazio(valor)
+        
         self._verificar_salario_tipo_invalido(valor)
         self._verificar_salario_negativo(valor)
 

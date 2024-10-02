@@ -1,9 +1,9 @@
 import pytest
-from models.cliente import Cliente
-from models.enums.estado_civil import EstadoCivil
-from models.enums.sexo import Sexo
-from models.endereco import Endereco
-from models.enums.unidade_federativa import UnidadeFederativa
+from projeto.models.cliente import Cliente
+from projeto.models.enums.estado_civil import EstadoCivil
+from projeto.models.enums.sexo import Sexo
+from projeto.models.endereco import Endereco
+from projeto.models.enums.unidade_federativa import UnidadeFederativa
 
 @pytest.fixture
 def cliente_valido():

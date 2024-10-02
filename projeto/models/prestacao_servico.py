@@ -9,15 +9,15 @@ class PrestacaoServico(Juridica):
 
 
     def _verificar_contrato_inicio(self, valor):
-        self._verificar_contrato_inicio_vazio(valor)
         self._verificar_contrato_inicio_tipo_invalido(valor)
+        self._verificar_contrato_inicio_vazio(valor)
 
         self.contratoInicio = valor
         return self.contratoInicio
 
     def _verificar_contrato_fim(self, valor):
-        self._verificar_contrato_fim_vazio(valor)
         self._verificar_contrato_fim_tipo_invalido(valor)
+        self._verificar_contrato_fim_vazio(valor)
 
         self.contratoFim = valor
         return self.contratoFim

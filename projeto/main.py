@@ -1,4 +1,7 @@
 import os 
+import sys
+sys.path.append('/workspaces/Atividade_Pontuada_01')
+
 from projeto.models.medico import Medico
 from projeto.models.advogado import Advogado
 from projeto.models.engenheiro import Engenheiro

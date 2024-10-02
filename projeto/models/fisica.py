@@ -12,8 +12,8 @@ class Fisica(Pessoa, ABC):
         self.dataNascimento = self._verificar_data_de_nascimento(dataNascimento)
 
     def _verificar_data_de_nascimento(self, valor):
-        self._verificar_data_de_nascimento_vazio(valor)
         self._verificar_data_de_nascimento_tipo_invalido(valor)
+        self._verificar_data_de_nascimento_vazio(valor)
 
         self.dataNascimento = valor
         return self.dataNascimento
